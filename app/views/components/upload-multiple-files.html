@@ -208,8 +208,16 @@
     <h2 class="govuk-heading-l">Design history</h2>
     <p class="govuk-body">Internal Planning Inspectorate users can <a href="https://pins-ds.atlassian.net/wiki/x/iIQDn" style="color: #1d70b8;">read how user research influenced our decisions</a> in creating this component.</p>
 
+    <h2 class="govuk-heading-l">Accessibility</h2>
+    <p class="govuk-body">Testing at the Solirius Accessibility Lab found that screen reader users had no way of knowing when uploads finished, and couldn't tell which file each 'Remove' or 'Change' link related to. We fixed this by:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>adding visually hidden text to the 'Remove' link so it announces the file name, for example "Remove Receipt-1.pdf"</li>
+      <li>not to announcing every file upload status or percentage of upload as this would overwhelm screen reader users.</li>
+      <li>adding a visually hidden, aria-live="assertive" status region that announces "Upload in progress" and "Upload successful"</li>
+  </ul>
     <h2 class="govuk-heading-l">Non-JavaScript uploader</h2>
-    <p class="govuk-body">A version of the multi-file uploader needs to be created for situations where javascript is not available. The non-javascript version of the multi-file upload has not been finished yet.</p>
+    <h3 class="govuk-heading-m">Background</h3>
+    <p class="govuk-body">A version of the multi-file uploader needs to be created for situations where javascript is not available. The non-javascript version of the multi-file upload has not been finished yet - the specifications are listed below.</p>
     <p class="govuk-body">multi-file-upload.njk is JavaScript-dependent by design.</p>
     <p class="govuk-body">Without JavaScript, it fails functionally because:</p>
     <ul class="govuk-list govuk-list--bullet">
@@ -219,8 +227,16 @@
     <li>“continue” logic (blocking while uploading, filtering invalid files) is JS-only.</li>
    <li>hidden inputs for submitted uploaded filenames are created in JS before submit.</li> 
   </ul>
-  <p class="govuk-body">So if JS is off and you render only multi-file-upload.njk, users will not get the intended uploader behaviour.
-That is why you need the separate non-JS fallback. A file for this is available but has not been finished yet (multi-file-uploader-no-script.njk).</p>
+  <h3 class="govuk-heading-m">Non-JavaScript version specifications</h3>
+  <p class="govuk-body">So, if Javascript is off and you render only multi-file-upload.njk, users will not get the intended uploader behaviour. The following changes need to be made to create the non-Javascript version:
+   <ul class="govuk-list govuk-list--bullet">
+      <li>Remove the drag and drop wording</li>
+      <li>Maintain the 'Choose files' button</li>
+      <li>Add a button for Upload files - this button refreshes the page and shows the summary list of files</li>
+      <li>Use the tags in the summary list to show status once the upload files button has been pressed</li>
+      <li>The remove button for each file should refresh the page and show the updated summary list</li>
+      <li>Error messages should display after pressing 'Upload files'</li>
+      </ul>
 
     <h2 class="govuk-heading-l">Discussion</h2>
     <p class="govuk-body">Help improve this component</p>
@@ -232,6 +248,9 @@ That is why you need the separate non-JS fallback. A file for this is available 
 
   </div>
 </div>
+
+
+
 {% endblock %}
 
 {% block pageScripts %}
