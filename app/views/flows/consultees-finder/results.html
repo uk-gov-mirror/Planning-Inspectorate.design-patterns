@@ -1,0 +1,110 @@
+{% set currentPage = "flows" %}
+{% extends "layouts/planning-inspectorate-internal-service.html" %}
+
+{% set pageName = "Project consultee lists" %}
+
+{% set back = true %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+  </div>
+  <div class="govuk-grid-column-full">
+
+    {{ govukTable({
+      caption: "3 results  for ABC123, using Ruleset A",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: true,
+      head: [
+        {
+          text: "Reference"
+        },
+        {
+          text: "Case name"
+        },
+        {
+          text: "Geometry project stage"
+        },
+        {
+          text: "Version"
+        },
+        {
+          text: "Received"
+        },
+        {
+          text: "Uploaded to C-BOS"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: '<a href="#" class="govuk-link">EN0110036</a>'
+          },
+          {
+            text: "Gwynt Glas Offshore Wind Farm"
+          },
+          {
+            text: "Acceptance"
+          },
+          {
+            text: "3"
+          },
+          {
+            text: "03/03/2026"
+          },
+          {
+            text: "10/03/2026 00:00:00"
+          }
+        ],
+        [
+          {
+            html: '<a href="#" class="govuk-link">EN0110037</a>'
+          },
+          {
+            text: "Gwynt Glas Offshore Wind Farm"
+          },
+          {
+            text: "Acceptance"
+          },
+          {
+            text: "2"
+          },
+          {
+            text: "03/02/2026"
+          },
+          {
+            text: "10/03/2026 00:00:00"
+          }
+        ],
+        [
+          {
+            html: '<a href="#" class="govuk-link">EN0110038</a>'
+          },
+          {
+            text: "Gwynt Glas Offshore Wind Farm"
+          },
+          {
+            text: "Scoping"
+          },
+          {
+            text: "1"
+          },
+          {
+            text: "03/01/2026"
+          },
+          {
+            text: "10/01/2026 23:00:00"
+          }
+        ]
+      ]
+    }) }}
+
+
+  </div>
+</div>
+{% endblock %}

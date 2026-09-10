@@ -1,0 +1,58 @@
+{% set currentPage = "flows" %}
+{% extends "layouts/planning-inspectorate-internal-service.html" %}
+
+{% set pageName = "Search for projects" %}
+
+{% set back = false %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+
+    {{ govukSelect({
+      id: "sort",
+      name: "sort",
+      label: {
+        text: "Select a ruleset"
+      },
+      items: [
+        {
+          value: "Ruleset A",
+          text: "Ruleset A"
+        },
+        {
+          value: "Ruleset B",
+          text: "Ruleset B",
+          selected: true
+        },
+        {
+          value: "Both rulesets",
+          text: "Both rulesets"
+        }
+      ]
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Enter the project reference, postcode, or part of the address"
+      },
+      hint: {
+        text: "For example, BS1 6HA or 123 High Street"
+      },
+      id: "search",
+      name: "search",
+      classes: "govuk-!-width-two-thirds"
+    }) }}
+
+    {{ govukButton({
+      href: "/flows/consultees-finder/results",
+      text: "Search"
+    }) }}
+
+  </div>
+</div>
+{% endblock %}

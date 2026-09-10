@@ -1,0 +1,33 @@
+{% set currentPage = "flows" %}
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Find consultees journey" %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      {{ pageName }}
+    </h1>
+   
+    <section class="govuk-!-margin-bottom-6">
+        {{ govukTag({
+            text: "Work in progress",
+            classes: "govuk-tag--yellow"
+        }) }}
+    </section>
+
+    <p class="govuk-body-l">
+      Showing a way to search for consultees associated with project boundaries.
+    </p>
+
+    {{ govukButton({
+        html: 'View prototype',
+        href: '/flows/consultees-finder/select-and-search',
+        isStartButton: true
+    }) }}
+
+  </div>
+</div>
+{% endblock %}
