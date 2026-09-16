@@ -1,0 +1,16 @@
+{# layouts/side-menu.html #}
+
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+{% macro sideMenu(currentItem) %}
+  {{ mojSideNavigation({
+    label: "Side navigation",
+    items: [
+      {
+        text: "Choosing a domain and header",
+        href: "/foundations/choosing-domain-and-header",
+        active: currentItem == "choosing-domain-and-header"
+      }
+    ]
+  }) }}
+{% endmacro %}

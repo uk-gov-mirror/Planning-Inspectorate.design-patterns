@@ -3,23 +3,26 @@
 
 {% set pageName = "Content" %}
 
-{% from "layouts/pattern-menu.html" import sideMenu %}
+{% from "layouts/content-menu.html" import sideMenu %}
 
 {% block content %}
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {{ sideMenu('') }}
+  </div>
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
     
     <h1 class="govuk-heading-xl">
       {{ pageName }}
     </h1>
     <p class="govuk-body-l">
-      Some kind of sub heading text, summary maybe (if you want to use it)
+     Content provides guidance on writing, structuring and presenting information across Planning Inspectorate services. </p>
+     
+     <p class="govuk-body">
+     It helps teams make consistent decisions about language, navigation, domains and service experiences, ensuring content is clear, accessible and user-centred.
     </p>
 
-    <p class="govuk-body">
-      Blurb goes here
-    </p>
   </div>
 </div>
 {% endblock %}

@@ -1,0 +1,65 @@
+{% set currentPage = "foundations" %}
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Choosing a domain and header" %}
+
+{% from "layouts/foundations-menu.html" import sideMenu %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {{ sideMenu('choosing-domain-and-header') }}
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">{{ pageName }}</h1>
+      <p>
+        <strong class="govuk-tag govuk-tag--yellow">Work in progress
+        </strong>
+      </p>
+    <p class="govuk-body-l">If you're unsure whether your service should use a GOV.UK domain and header or a Planning Inspectorate domain and header, this guidance will help you make an informed decision.</p> 
+    <p class="govuk-body">Start by considering where your service will be hosted, how users will access it, and any agreed decisions from architecture, service governance or GDS. Once a domain has been agreed, the corresponding header pattern should be used consistently throughout the service.</p>
+    <h2 class="govuk-heading-m">Related guidance</h2>
+        <ul class="govuk-list govuk-list--bullet">
+        <li><a href="/components/header">Header component guidance</a></li>
+        <li><a href="/components/service-navigation.html">Service navigation component guidance</a></li>
+        <li><a href="/components/footer.html">Footer component guidance</a></li>
+        <li><a href="https://www.gov.uk/service-manual/technology/get-a-domain-name" class="govuk-link" target="_blank" rel="noreferrer noopener">Get a service domain name</a> (opens in a new tab)</li>
+        <li><a href="https://www.gov.uk/guidance/check-if-your-organisation-can-get-a-govuk-domain-name" class="govuk-link" target="_blank" rel="noreferrer noopener">Check if your organisation can get a .gov.uk domain name</a> (opens in a new tab)</li>
+        </ul>
+    
+<h2 class="govuk-heading-m">When to consider a Planning Inspectorate domain</h2>
+    <p class="govuk-body">Questions to consider:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Is the service operated independently by the Planning Inspectorate?</li>
+        <li>Is the service acting as a specialist operational portal?</li>
+        <li>Has a decision already been made not to use a service.gov.uk domain?</li>
+    </ul>
+    </p>
+
+
+
+    <h2 class="govuk-heading-m">Record the decision</h2>
+    <p class="govuk-body">Where a service does not use a GOV.UK domain, record:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>The agreed domain</li>
+        <li>The rationale of the decision</li>
+        <li>Who made the decision</li>
+        <li>any advice received from GDS, architecture or design governance</li>
+    </ul></p>
+
+
+    <h2 class="govuk-heading-m">What not to use as the sole decision criteria</h2>
+    <p class="govuk-body">The GOV.UK domain guidance I reviewed does not identify the following as deciding factors for whether a service should use a service.gov.uk domain:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Traffic volume</li>
+        <li>Number of users</li>
+        <li>Whether users are members of the public</li>
+        <li>Whether users are professionals</li>
+    </ul></p>
+    <p class="govuk-body">The guidance focuses on domain governance and use of appropriate government domains rather than service volume.
+    </p>
+  </div>
+</div>
+{% endblock %}
+
+

@@ -1,0 +1,28 @@
+{% set currentPage = "foundations" %}
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Foundations" %}
+
+{% from "layouts/foundations-menu.html" import sideMenu %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {{ sideMenu('') }}
+  </div>
+
+  <div class="govuk-grid-column-three-quarters">
+    
+    <h1 class="govuk-heading-xl">
+      {{ pageName }}
+    </h1>
+    <p class="govuk-body-l">
+      Foundations set out the principles, standards and decisions that support Planning Inspectorate services.
+    </p>
+
+    <p class="govuk-body">
+      They provide guidance on domains, branding, navigation and service design, helping teams create consistent and user-centred experiences.
+    </p>
+  </div>
+</div>
+{% endblock %}

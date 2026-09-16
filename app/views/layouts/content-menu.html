@@ -1,0 +1,14 @@
+{# layouts/side-menu.html #}
+
+{%- from "moj/components/side-navigation/macro.njk" import mojSideNavigation -%}
+
+{% macro sideMenu(currentItem) %}
+  {{ mojSideNavigation({
+    label: "Side navigation",
+    items: [
+      {
+        
+      }
+    ]
+  }) }}
+{% endmacro %}
