@@ -1,6 +1,6 @@
 {# No-JS uploader markup. Wrap in <noscript> by default unless used as an always-visible example. #}
 {% set renderWithoutNoscript = renderWithoutNoscript or false %}
-{% set hint = hint or "The file must be a DOC, DOCX, PDF, TIF, JPG or PNG and be smaller than 25MB" %}
+{% set hint = hint or "The files must be a DOC, DOCX, PDF, CSV, JPG or PNG and be smaller than 250MB" %}
 {% set accept = accept or ".doc,.docx,.pdf,.tif,.tiff,.jpg,.jpeg,.png" %}
 
 {% if not renderWithoutNoscript %}
