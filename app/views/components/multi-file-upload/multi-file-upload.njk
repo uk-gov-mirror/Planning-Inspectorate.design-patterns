@@ -7,7 +7,7 @@
   {% set hint = params.hint or "The files must be a DOC, DOCX, PDF, CSV, JPG or PNG and be smaller than 250MB" %}
   {% set allowedExtensions = params.allowedExtensions or ["doc", "docx", "pdf", "tif", "tiff", "jpg", "jpeg", "png"] %}
   {% set accept = params.accept or ("." + (allowedExtensions | join(",."))) %}
-  {% set maxFileSizeMB = params.maxFileSizeMB or 25 %}
+  {% set maxFileSizeMB = params.maxFileSizeMB or 250 %}
 
   {% set dataKey = params.dataKey or "uploadedFiles" %}
   {% set errorMessage = params.errorMessage
